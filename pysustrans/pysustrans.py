@@ -1,2 +1,2 @@
 def first_func():
-    print("hello pysustrans")
+    print("hello pysustrans!")
