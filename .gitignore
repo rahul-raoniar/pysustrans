@@ -7,7 +7,7 @@ ENV/*
 .idea/*
 .vscode/*
 .DS_Store
-pysustrans.egg-info*/*
+pysustrans.egg*/*
 *__pycache__*
 *run_stuff.py*
 build/*

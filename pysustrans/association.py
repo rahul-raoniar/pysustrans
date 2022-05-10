@@ -5,6 +5,15 @@ import numpy as np
 from itertools import combinations
 
 
+"""
+Calculate the association among two nominal variables
+
+Parameters:
+``````````````````````````````
+dataframe : a pandas DataFrame object.
+method: [“cramer”, “tschuprow”, “pearson”] (default = “cramer”) 
+"""
+
 # Class definition
 class Association:
     def __init__(self, dataframe, method):
@@ -13,18 +22,30 @@ class Association:
         self.matrix = None
         
     def check_df(self):
+        """
+        Given a dataset it checks whether the dataset is an instance of pandas DataFrame, if not then
+        raises a TypeError
+        """
         if isinstance(self.dataframe, pd.DataFrame):
             self.data = self.dataframe
         else:
             raise TypeError("data frame must be an instance of pd.DataFrame")
         
     def select_variable(self):
+        """
+        Given a dataframe it selects the "object" columns and if the DataFrame is empty it raises an 
+        KeyError
+        """
         self.obj_columns = self.data.select_dtypes(include = ["object"]).columns
         
         if len(self.obj_columns) == 0:
             raise KeyError("No object variables found")
         
     def pairwise_mat(self):
+        """
+        - Creating a 2-D array with ones on the diagonal and zeros elsewhere [np.eye( )].
+        - Converting it to a pandas DataFrame
+        """
         self.matrix = pd.DataFrame(
             np.eye(len(self.obj_columns)),
             columns = self.obj_columns,
@@ -32,8 +53,21 @@ class Association:
         )
         
     def compute_pair(self):
+        """
+        combinations from itertools used for generating pair-wise combination
+        Example:
+            col_names = ["sex", "smoker", "day", "time"]
+            
+            # size of combination is set to 2
+            a = combinations(col_names, 2) 
+            y = [(i, j) for i, j in a]
+            print(y)
+            
+            Output: [('sex', 'smoker'), ('sex', 'day'), ('sex', 'time'), ('smoker', 'day'), ('smoker', 'time'), ('day', 'time')]
+        """
+    
         n = len(self.obj_columns)
-        all_combination = combinations(self.obj_columns, r = 2)
+        all_combination = combinations(self.obj_columns, r = 2) # `r`: size of combination; here set to 2
         
         # Iterating through combinations
         for comb in all_combination:
@@ -42,11 +76,21 @@ class Association:
             
             # crosstab calculation
             ctab = pd.crosstab(self.data[i], self.data[j])
-            
+            # Computing association value based on supplied method
             val = association(ctab, method = self.method)
+            # Adding value to the matrix
             self.matrix[i][j], self.matrix[j][i] = val, val
             
     def fit(self):
+        """
+        After calling the Association class on dataset user need to call the .fit() method.
+        - 1. It will check for the dataframe [check_df( )]
+        - 2. Then selecting the object variables [select_variables( )]
+        - 3. Creating pairwise empty matrix [pairwise_mat( )]
+        - 4. Calculating pair-wise association matrix [compute_pair( )]
+        At the end returns the association matrix
+        
+        """
         self.check_df()
         self.select_variable()
         self.pairwise_mat()

@@ -1,1 +1,1 @@
-from .sustrans import association
+from .association import Association
