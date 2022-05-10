@@ -14,7 +14,6 @@ CLASSIFIERS = [
         'Programming Language :: Python :: 3'
 ]
 LONG_DESC_TYPE = "text/markdown"
-LICENSE = "MIT"
 
 
 # Setting up
@@ -30,6 +29,5 @@ setup(
     packages=find_packages(),
     install_requires=['numpy', 'scipy', 'pandas', 'matplotlib'],
     classifiers= CLASSIFIERS,
-    license= LICENSE
 )
 

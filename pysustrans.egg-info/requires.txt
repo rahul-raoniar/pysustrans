@@ -1,4 +1,4 @@
-dython
+numpy
+scipy
 pandas
 matplotlib
-numpy
