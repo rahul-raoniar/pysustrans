@@ -28,7 +28,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESC_TYPE,
     packages=find_packages(),
-    install_requires=['dython', 'pandas', 'matplotlib', 'numpy'],
+    install_requires=['numpy', 'scipy', 'pandas', 'matplotlib'],
     classifiers= CLASSIFIERS,
     license= LICENSE
 )
