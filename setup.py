@@ -6,7 +6,7 @@ AUTHOR = 'Rahul Raoniar'
 EMAIL = "rahul.raoniar@outlook.com"
 URL = ''
 DOWNLOAD_URL = ''
-VERSION = '0.0.1'
+VERSION = '0.0.104'
 DESCRIPTION = 'A transportation data analytics package'
 LONG_DESCRIPTION = 'A package that allows performing common statitical analysis on transportation related data.'
 LICENSE = 'MIT'
@@ -14,6 +14,7 @@ CLASSIFIERS = [
         'Programming Language :: Python :: 3'
 ]
 LONG_DESC_TYPE = "text/markdown"
+LICENSE = "MIT"
 
 
 # Setting up
@@ -22,12 +23,13 @@ setup(
     version=VERSION,
     author=AUTHOR,
     author_email=EMAIL,
+    license=LICENSE,
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
     long_description=LONG_DESC_TYPE,
     packages=find_packages(),
     install_requires=['dython', 'pandas', 'matplotlib', 'numpy'],
-    keywords=['python', 'transportation', 'exporatory data analysis' 'statistics', 'modelling'],
     classifiers= CLASSIFIERS,
     license= LICENSE
 )
+

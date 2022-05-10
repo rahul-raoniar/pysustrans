@@ -1,1 +1,1 @@
-from pysustrans import first_func
+from .sustrans import association
