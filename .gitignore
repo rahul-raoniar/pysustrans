@@ -1,5 +1,5 @@
 syntax: glob
-.pysustrans-version
+.pysustrans-version/*
 .venv
 env/*
 venv/*
