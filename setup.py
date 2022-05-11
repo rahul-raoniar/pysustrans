@@ -1,18 +1,20 @@
 from setuptools import setup, find_packages
 
 
+# Details
 PACKAGE_NAME = 'pysustrans'
 AUTHOR = 'Rahul Raoniar'
 EMAIL = "rahul.raoniar@outlook.com"
 URL = 'https://github.com/rahul-raoniar/pysustrans'
 DOWNLOAD_URL = 'https://pypi.org/project/pysustrans/'
-VERSION = '0.0.106'
+VERSION = "0.0.106"
 DESCRIPTION = 'A transportation data analytics package'
 LONG_DESCRIPTION = 'A package that allows performing common statitical analysis on transportation related data.'
 LICENSE = 'MIT'
 CLASSIFIERS = [
         'Programming Language :: Python :: 3'
 ]
+
 LONG_DESC_TYPE = "text/markdown"
 
 
