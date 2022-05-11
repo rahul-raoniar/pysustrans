@@ -4,9 +4,9 @@ from setuptools import setup, find_packages
 PACKAGE_NAME = 'pysustrans'
 AUTHOR = 'Rahul Raoniar'
 EMAIL = "rahul.raoniar@outlook.com"
-URL = ''
-DOWNLOAD_URL = ''
-VERSION = '0.0.105'
+URL = 'https://github.com/rahul-raoniar/pysustrans'
+DOWNLOAD_URL = 'https://pypi.org/project/pysustrans/'
+VERSION = '0.0.106'
 DESCRIPTION = 'A transportation data analytics package'
 LONG_DESCRIPTION = 'A package that allows performing common statitical analysis on transportation related data.'
 LICENSE = 'MIT'
@@ -27,7 +27,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=LONG_DESC_TYPE,
     packages=find_packages(),
-    install_requires=['numpy', 'scipy', 'pandas', 'matplotlib'],
+    install_requires=['numpy', 'scipy', 'pandas', 'matplotlib', 'seaborn'],
     classifiers= CLASSIFIERS,
 )
 
