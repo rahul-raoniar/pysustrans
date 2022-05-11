@@ -3,8 +3,8 @@ from scipy.stats.contingency import association
 import pandas as pd
 import numpy as np
 from itertools import combinations
-
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 """
 Calculate the association among two nominal variables
 
@@ -16,7 +16,7 @@ method: [“cramer”, “tschuprow”, “pearson”] (default = “cramer”)
 
 # Class definition
 class Association:
-    def __init__(self, dataframe, method):
+    def __init__(self, dataframe, method = "cramer"):
         self.dataframe = dataframe
         self.method = method
         self.matrix = None
@@ -77,10 +77,36 @@ class Association:
             # crosstab calculation
             ctab = pd.crosstab(self.data[i], self.data[j])
             # Computing association value based on supplied method
-            val = association(ctab, method = self.method)
+            val = round(association(ctab, method = self.method), 2)
             # Adding value to the matrix
-            self.matrix[i][j], self.matrix[j][i] = val, val
-            
+            self.matrix[i][j], self.matrix[j][i] = val, val  
+        
+        return self.matrix
+        
+        
+                     
+    def generate_plot(self):
+        
+        """
+        This function generates a heatmap
+        
+        """
+        
+        tempdf = self.compute_pair()
+        ax = sns.heatmap(tempdf,
+                         annot = True,
+                         cbar = True,
+                         vmin = 0,
+                         vmax = 1,
+                         cmap = "Blues")
+        ax.set_xlabel("Variables", size = 12)
+        ax.set_ylabel("Variables", size = 12)
+        ax.tick_params(axis = "x", labelsize = 12, labelrotation = 90)
+        ax.tick_params(axis = "y", labelsize = 12, labelrotation = 0)
+        
+        return ax         
+        
+                
     def fit(self):
         """
         After calling the Association class on dataset user need to call the .fit() method.
@@ -94,6 +120,7 @@ class Association:
         self.check_df()
         self.select_variable()
         self.pairwise_mat()
-        self.compute_pair()
         
-        return self.matrix
+        # The method returns a pair-wise matrix and am axis plot object
+        return {"asso":self.compute_pair(), "ax":self.generate_plot()}
+       
