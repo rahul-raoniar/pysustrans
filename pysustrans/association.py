@@ -109,12 +109,13 @@ class Association:
                 
     def fit(self):
         """
-        After calling the Association class on dataset user need to call the .fit() method.
-        - 1. It will check for the dataframe [check_df( )]
-        - 2. Then selecting the object variables [select_variables( )]
-        - 3. Creating pairwise empty matrix [pairwise_mat( )]
-        - 4. Calculating pair-wise association matrix [compute_pair( )]
-        At the end returns the association matrix
+        After calling the Association class on dataset, the user need to call the .fit() method.
+        - 1. check_df( ): It will check for the dataframe.
+        - 2. select_variables( ): Then selecting the object variables
+        - 3. pairwise_mat( ): Creating pairwise empty matrix.
+        - 4. compute_pair( ): Calculating pair-wise association matrix
+        - 5. generate_plot( ): Generates a pair-wise heatmap.
+        At the end returns the association matrix and axis object
         
         """
         self.check_df()
