@@ -115,7 +115,8 @@ class Association:
         - 3. pairwise_mat( ): Creating pairwise empty matrix.
         - 4. compute_pair( ): Calculating pair-wise association matrix
         - 5. generate_plot( ): Generates a pair-wise heatmap.
-        At the end returns the association matrix and axis object
+        The fit( ) method returns the association matrix and axis object
+        - {"asso":self.compute_pair(), "ax":self.generate_plot()}
         
         """
         self.check_df()
