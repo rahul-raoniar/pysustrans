@@ -1,5 +1,5 @@
 syntax: glob
-.pysustrans-version/*
+.pysustrans-version
 .venv
 env/*
 venv/*
@@ -7,7 +7,7 @@ ENV/*
 .idea/*
 .vscode/*
 .DS_Store
-pysustrans.egg*/*
+pysustrans.egg-info/*
 *__pycache__*
 *run_stuff.py*
 build/*
