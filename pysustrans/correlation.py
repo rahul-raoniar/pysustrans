@@ -125,7 +125,7 @@ class Correlation:
         ax = sns.heatmap(tempdf,
                          annot = True,
                          cbar = True,
-                         vmin = 0,
+                         vmin = -1,
                          vmax = 1,
                          cmap = "Blues")
 
