@@ -99,9 +99,7 @@ class Association:
                          vmin = 0,
                          vmax = 1,
                          cmap = "Blues")
-        # Setting x and y label and size.
-        ax.set_xlabel("Variables", size = 12)
-        ax.set_ylabel("Variables", size = 12)
+
         
         # Changing tick parameters size and rotation.
         ax.tick_params(axis = "x", labelsize = 12, labelrotation = 90)
