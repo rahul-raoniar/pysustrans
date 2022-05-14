@@ -15,5 +15,5 @@ pip install pysustrans
 
 **Dependencies:** `numpy`, `pandas`, `scipy`, `matplotlib`, `seaborn`
 
-## Contributing:
+## Contributions:
 Contributions, bugfixes and suggestions are welcomed.
