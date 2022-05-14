@@ -25,6 +25,8 @@ class Correlation:
         self.pval_list = []
         self.comb_list = []
         
+        
+        
     def check_df(self):
         """
         Given a dataset it checks whether the dataset is an instance of pandas DataFrame, if not then
@@ -34,6 +36,8 @@ class Correlation:
             self.data = self.dataframe
         else:
             raise TypeError("data frame must be an instance of pd.DataFrame")
+        
+        
         
     def select_variable(self):
         """
@@ -45,6 +49,8 @@ class Correlation:
         if len(self.obj_columns) == 0:
             raise KeyError("No object variables found")
         
+        
+        
     def pairwise_mat(self):
         """
         - Creating a 2-D array with ones on the diagonal and zeros elsewhere [np.eye( )].
@@ -55,6 +61,8 @@ class Correlation:
             columns = self.obj_columns,
             index = self.obj_columns
         )
+        
+        
         
     def compute_pair(self):
         """
@@ -136,6 +144,7 @@ class Correlation:
         
         return ax         
         
+              
                 
     def fit(self):
         """

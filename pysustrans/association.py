@@ -1,3 +1,5 @@
+# Dependencies
+# Import all of them to execute the class methods
 from logging import raiseExceptions
 from scipy.stats.contingency import association
 import pandas as pd
@@ -21,6 +23,8 @@ class Association:
         self.method = method
         self.matrix = None
         
+        
+        
     def check_df(self):
         """
         Given a dataset it checks whether the dataset is an instance of pandas DataFrame, if not then
@@ -41,6 +45,8 @@ class Association:
         if len(self.obj_columns) == 0:
             raise KeyError("No object variables found")
         
+        
+        
     def pairwise_mat(self):
         """
         - Creating a 2-D array with ones on the diagonal and zeros elsewhere [np.eye( )].
@@ -51,6 +57,8 @@ class Association:
             columns = self.obj_columns,
             index = self.obj_columns
         )
+        
+        
         
     def compute_pair(self):
         """
@@ -84,7 +92,7 @@ class Association:
         return self.matrix
         
         
-                     
+                    
     def generate_plot(self):
         
         """
@@ -107,6 +115,7 @@ class Association:
         
         return ax         
         
+             
                 
     def fit(self):
         """
