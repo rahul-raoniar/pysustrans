@@ -5,14 +5,23 @@ from itertools import combinations
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
 """
-Calculate the correlation among two numeric variables
+Calculate the association among two nominal variables
 
 Parameters:
-``````````````````````````````
-dataframe : a pandas DataFrame object.
-method: [“cramer”, “tschuprow”, “pearson”] (default = “cramer”) 
+------------
+dataframe : DataFrame
+    a pandas DataFrame object.
+    
+method: [“cramer”, “tschuprow”, “pearson”] 
+    Avilable methods are “cramer”, “tschuprow” and “pearson”. (default = “cramer”)
+    
+Returns:
+-------
+Returns a seaborn pair-wise correlation heatmap.
+corr_mat: A pair-wise correlation (matrix) pandas DataFrame object {"corr_mat"}
+corr_df: A pair-wise correlation matrix with associated p-values in pandas DataFrame object format {"corr_df"} 
+ax: A matplotlib axis object ("ax")
 """
 
 # Class definition

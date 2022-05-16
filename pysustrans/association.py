@@ -7,13 +7,23 @@ import numpy as np
 from itertools import combinations
 import matplotlib.pyplot as plt
 import seaborn as sns
+
 """
 Calculate the association among two nominal variables
 
 Parameters:
-``````````````````````````````
-dataframe : a pandas DataFrame object.
-method: [“cramer”, “tschuprow”, “pearson”] (default = “cramer”) 
+------------
+dataframe : DataFrame
+    a pandas DataFrame object.
+    
+method: [“cramer”, “tschuprow”, “pearson”] 
+    Avilable methods are “cramer”, “tschuprow” and “pearson”. (default = “cramer”)
+    
+Returns:
+-------
+Returns a seaborn pair-wise correlation heatmap.
+asso: A pair-wise association (matrix) pandas DataFrame object {"asso"}.
+ax: A matplotlib axis object ("ax").
 """
 
 # Class definition
@@ -22,7 +32,6 @@ class Association:
         self.dataframe = dataframe
         self.method = method
         self.matrix = None
-        
         
         
     def check_df(self):
