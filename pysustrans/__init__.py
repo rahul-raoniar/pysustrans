@@ -9,4 +9,4 @@ from pysustrans.association import Association
 from pysustrans.correlation import Correlation
 
 # Current version
-__version__ = "0.0.110"
+__version__ = "0.0.111"
