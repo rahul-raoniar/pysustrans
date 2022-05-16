@@ -13,12 +13,12 @@ Parameters:
 dataframe : DataFrame
     a pandas DataFrame object.
     
-method: [“cramer”, “tschuprow”, “pearson”] 
-    Avilable methods are “cramer”, “tschuprow” and “pearson”. (default = “cramer”)
+method: ["pearson", "spearman", "kendalltau"] 
+    Avilable methods are "pearson", "spearman" and "kendalltau". (default = “pearson”)
     
 Returns:
 -------
-Returns a seaborn pair-wise correlation heatmap.
+Displays a pair-wise correlation heatmap.
 corr_mat: A pair-wise correlation (matrix) pandas DataFrame object {"corr_mat"}
 corr_df: A pair-wise correlation matrix with associated p-values in pandas DataFrame object format {"corr_df"} 
 ax: A matplotlib axis object ("ax")

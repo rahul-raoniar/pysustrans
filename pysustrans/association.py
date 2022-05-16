@@ -21,7 +21,7 @@ method: [“cramer”, “tschuprow”, “pearson”]
     
 Returns:
 -------
-Returns a seaborn pair-wise correlation heatmap.
+Displays a pair-wise association heatmap.
 asso: A pair-wise association (matrix) pandas DataFrame object {"asso"}.
 ax: A matplotlib axis object ("ax").
 """
