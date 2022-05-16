@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 """
-Calculate the association among two nominal variables
+Calculate the correlation among two numeric variables
 
 Parameters:
 ------------
 dataframe : DataFrame
-    a pandas DataFrame object.
+    A pandas DataFrame object.
     
-method: ["pearson", "spearman", "kendalltau"] 
+method: str 
     Avilable methods are "pearson", "spearman" and "kendalltau". (default = “pearson”)
     
 Returns:

@@ -14,9 +14,9 @@ Calculate the association among two nominal variables
 Parameters:
 ------------
 dataframe : DataFrame
-    a pandas DataFrame object.
+    A pandas DataFrame object.
     
-method: [“cramer”, “tschuprow”, “pearson”] 
+method: str 
     Avilable methods are “cramer”, “tschuprow” and “pearson”. (default = “cramer”)
     
 Returns:
