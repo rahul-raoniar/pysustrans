@@ -13,6 +13,7 @@ pysustrans can be installed directly using `pip`:
 pip install pysustrans
 ```
 
+**Python Require** `Python>=3.8`
 **Dependencies:** `numpy`, `pandas`, `scipy`, `matplotlib`, `seaborn`
 
 ## Contributions:
