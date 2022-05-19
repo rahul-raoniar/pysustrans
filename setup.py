@@ -35,5 +35,6 @@ setup(
     packages=find_packages(),
     install_requires=['numpy', 'scipy', 'pandas', 'matplotlib', 'seaborn'],
     classifiers= CLASSIFIERS,
+    python_requires=">=3.8"
 )
 
